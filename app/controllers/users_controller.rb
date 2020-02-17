@@ -38,6 +38,10 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
+  def likes
+  end  
+  
+  
   private
   
   def user_params
