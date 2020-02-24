@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    micropost = Micropost.find(params[:micropost_id])
+    micropost = Micropost.find(params[:id])
     current_user.unfavorite(micropost)
     flash[:success] = 'お気に入りを外しました。'
     redirect_to root_path
