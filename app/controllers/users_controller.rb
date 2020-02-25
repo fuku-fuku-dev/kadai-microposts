@@ -39,9 +39,8 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @favorites = Favorite.where("user_id = ?", @user)
-    @fav_microposts = @micropost.fav_microposts.page(params[:page])
-    counts(@fav_micropost)
+    @fav_microposts = current_user.fav_microposts.page(params[:page])
+    counts(@user)
   end  
   
   
