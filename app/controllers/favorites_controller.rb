@@ -1,10 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :require_user_logged_in
   
-  def show
-    @user = User.find(params[:id])
-  end  
-  
   def create
     micropost = Micropost.find(params[:micropost_id])
     current_user.favorite(micropost)
